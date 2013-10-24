@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<constant name="struts.ui.theme" value="simple" />
+<constant name="struts.devMode" value="true" />
+
+	<package name="login" namespace="/" extends="struts-default">
+		<action name="login" class="de.aschneider.action.LoginAction">
+			<result name="success">/auswahl.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+	</package>
+	
+	<package name="registrieren" namespace="/" extends="struts-default">
+		<action name="registrieren" class="de.aschneider.action.RegistrierenAction">
+			<result name="success">/registrieren.jsp</result>
+		</action>
+	</package>
+	
+	<package name="anlegen" namespace="/" extends="struts-default">
+		<action name="anlegen" class="de.aschneider.action.RegistrierenAction" method="anlegen">
+			<result name="success">/registrieren.jsp</result>
+		</action>
+	</package>
+	
+	<package name="getChart" namespace="/" extends="struts-default">
+		<action name="getChart" class="de.aschneider.action.ChartAction" >
+			<result name="success">/senWerChart.jsp</result>
+		</action>
+	</package>
+	
+	
+	<package name="getTelData" namespace="/" extends="struts-default">
+		<action name="getTelData" class="de.aschneider.action.NutzerUpdateAction" method="getTelData" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+	</package>
+	
+	<package name="getEMailData" namespace="/" extends="struts-default">
+		<action name="getEMailData" class="de.aschneider.action.NutzerUpdateAction" method="getEMailData" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+	</package>
+	
+	<package name="getAddressData" namespace="/" extends="struts-default">
+		<action name="getAddressData" class="de.aschneider.action.NutzerUpdateAction" method="getAddressData" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+	</package>
+
+	<package name="userUpdate" namespace="/" extends="struts-default">
+		<action name="userUpdate" class="de.aschneider.action.NutzerUpdateAction" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+	</package>
+	
+	<package name="updateTel" namespace="/" extends="struts-default">
+		<action name="updateTel" class="de.aschneider.action.NutzerUpdateAction" method="updateTel" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+		<action name="insertTel" class="de.aschneider.action.NutzerUpdateAction" method="insertTel" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+		<action name="deleteTel" class="de.aschneider.action.NutzerUpdateAction" method="deleteTel" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+	</package>
+	
+	<package name="updateMail" namespace="/" extends="struts-default">
+		<action name="updateMail" class="de.aschneider.action.NutzerUpdateAction" method="updateMail" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+		<action name="insertMail" class="de.aschneider.action.NutzerUpdateAction" method="insertMail" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+		<action name="deleteMail" class="de.aschneider.action.NutzerUpdateAction" method="deleteMail" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+	</package>
+	
+	<package name="updateAdr" namespace="/" extends="struts-default">
+		<action name="updateAdr" class="de.aschneider.action.NutzerUpdateAction" method="updateAdr" >										
+			<result name="success">/userUpdate.jsp</result>
+		</action>
+	</package>
+	
+	<package name="setRules" namespace="/" extends="struts-default">
+		<action name="setRules" class="de.aschneider.action.SetRulesAction" >										
+			<result name="success">/setRules.jsp</result>
+		</action>
+	</package>
+	
+	
+	<package name="setRulesSensor" namespace="/" extends="struts-default">
+		<action name="setRulesSensor" class="de.aschneider.action.SetRulesAction"  method="setRulesSensor">										
+			<result name="success">/setRules.jsp</result>
+		</action>
+	</package>
+	
+	<package name="setRulesAktor" namespace="/" extends="struts-default">
+		<action name="setRulesAktor" class="de.aschneider.action.SetRulesAction"  method="setRulesAktor">										
+			<result name="success">/setRules.jsp</result>
+		</action>
+	</package>
+	
+	<package name="setRulesInDB" namespace="/" extends="struts-default">
+		<action name="setRulesInDB" class="de.aschneider.action.SetRulesAction"  method="setRulesInDB">										
+			<result name="success">/setRules.jsp</result>
+		</action>
+	</package>
+	
+	<package name="showRules" namespace="/" extends="struts-default">
+		<action name="showRules" class="de.aschneider.action.ShowRulesAction" >										
+			<result name="success">/showRules.jsp</result>
+		</action>
+	</package>
+
+	
+	<package name="getRulesData" namespace="/" extends="struts-default">
+		<action name="getRulesData" class="de.aschneider.action.ShowRulesAction" method="getRulesData" >										
+			<result name="success">/showRules.jsp</result>
+		</action>
+	</package>
+	
+	<package name="getMandant" namespace="/" extends="struts-default">
+		<action name="getMandant" class="de.aschneider.action.GetMandantAction" >										
+			<result name="success">/getMandant.jsp</result>
+		</action>
+	</package>
+	
+	<package name="loadMandant" namespace="/" extends="struts-default">
+		<action name="loadMandant" class="de.aschneider.action.GetMandantAction" method="loadMandant">										
+			<result name="success">/getMandant.jsp</result>
+		</action>
+	</package>
+	
+		<package name="insertMandant" namespace="/" extends="struts-default">
+		<action name="insertMandant" class="de.aschneider.action.GetMandantAction" method="insertMandant" >										
+			<result name="success">/getMandant.jsp</result>
+		</action>
+	</package>
+
+	
+	<package name="showChart" namespace="/" extends="jfreechart-default">
+		<action name="showChart" class="de.aschneider.action.ChartAction" method="showChart">										
+			<result name="success" type="chart">
+				<param name="width">900</param>
+				<param name="height">600</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="showChartMRS" namespace="/" extends="jfreechart-default">
+		<action name="showChartMRS" class="de.aschneider.action.ChartAction" method="showChartMRS">										
+			<result name="success" type="chart">
+				<param name="width">1200</param>
+				<param name="height">800</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="showChartTempLuft" namespace="/" extends="jfreechart-default">
+		<action name="showChartTempLuft" class="de.aschneider.action.ChartAction" method="showChartTempLuft">										
+			<result name="success" type="chart">
+				<param name="width">1200</param>
+				<param name="height">800</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	<package name="showChartSteckdose" namespace="/" extends="jfreechart-default">
+		<action name="showChartSteckdose" class="de.aschneider.action.ChartAction" method="showChartSteckdose">										
+			<result name="success" type="chart">
+				<param name="width">1200</param>
+				<param name="height">800</param>
+			</result>
+		</action>
+	</package>
+	
+	<package name="showChartBewegungsmelder" namespace="/" extends="jfreechart-default">
+		<action name="showChartBewegungsmelder" class="de.aschneider.action.ChartAction" method="showChartBewegungsmelder">										
+			<result name="success" type="chart">
+				<param name="width">1200</param>
+				<param name="height">800</param>
+			</result>
+		</action>
+	</package>
+	<package name="showChartShutCont" namespace="/" extends="jfreechart-default">
+		<action name="showChartShutCont" class="de.aschneider.action.ChartAction" method="showChartShutCont">										
+			<result name="success" type="chart">
+				<param name="width">1200</param>
+				<param name="height">800</param>
+			</result>
+		</action>
+	</package>
+	
+	
+	
+</struts>
