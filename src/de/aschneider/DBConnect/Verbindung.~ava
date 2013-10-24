@@ -6,12 +6,12 @@ import java.sql.SQLException;
 
 public class Verbindung {
 
-  public Connection connect() throws SQLException{
+	public Connection connect() throws SQLException{
         String treiber;
 
         treiber = "org.apache.cassandra.cql.jdbc.CassandraDriver";
         Connection con = null;
-                     int i;
+        
         // Treiber laden
         try{
             Class.forName(treiber).newInstance();
@@ -30,5 +30,5 @@ public class Verbindung {
         }
         return con;
     }  
-  
+	
 }
